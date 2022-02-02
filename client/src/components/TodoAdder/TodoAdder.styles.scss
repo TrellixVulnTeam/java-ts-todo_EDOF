@@ -1,0 +1,53 @@
+$mobile: 400px;
+
+.todo-adder {
+  display: block;
+  margin: 1rem 0;
+  @media screen and(min-width: $mobile) {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .todo-adder__button {
+    height: 4vh;
+  }
+}
+
+.group {
+  position: relative;
+  .form-input-label {
+    color: grey;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 300ms ease all;
+    &.shrink {
+      top: -14px;
+      font-size: 12px;
+      color: black;
+    }
+  }
+}
+
+.input {
+  background: #f7f7f7;
+  color: grey;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid grey;
+  &:focus {
+    outline: none;
+  }
+  &:focus ~ .form-input-label {
+    top: -14px;
+    font-size: 12px;
+    color: black;
+  }
+}

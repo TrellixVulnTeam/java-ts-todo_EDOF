@@ -1,0 +1,74 @@
+$transition: 0.3s all ease-in-out;
+$paragraph: 'Chivo', sans-serif;
+$green: #a0e7a0;
+$red: #ff5148;
+
+$mobile: 400px;
+$tablet: 768px;
+$desktop: 1024px;
+
+.todo {
+  background: #f7f7f7;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  margin: 1rem;
+  padding: 1rem;
+  @media screen and(min-width: $mobile) {
+    width: 90%;
+  }
+  @media screen and(min-width: $tablet) {
+    width: 70%;
+  }
+  @media screen and(min-width: $desktop) {
+    width: 50%;
+  }
+
+  .todo__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .todo__content--paragraph {
+    font-family: $paragraph;
+    font-weight: 100;
+  }
+  .todo__content__button--mark {
+    border: 1px solid $green;
+    color: $green;
+    &:hover {
+      background: $green;
+      color: white;
+    }
+  }
+  .todo__content__button--delete {
+    border: 1px solid $red;
+    color: $red;
+    &:hover {
+      background: $red;
+      color: white;
+    }
+  }
+}
+
+.todo__empty {
+  margin: 1rem;
+  font-family: $paragraph;
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.todo__finished {
+  @extend .todo;
+  background: #d1d1d1;
+  color: rgba(0, 0, 0, 0.6);
+  order: 1;
+  p {
+    text-decoration: line-through;
+  }
+}
+
+.todo__update {
+  display: flex;
+  padding: 1rem;
+}
